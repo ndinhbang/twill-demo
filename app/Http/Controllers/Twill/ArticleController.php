@@ -20,6 +20,7 @@ class ArticleController extends BaseModuleController
     protected function setUpController(): void
     {
         $this->enableReorder();
+        $this->setPermalinkBase('articles');
     }
 
     /**
@@ -49,5 +50,16 @@ class ArticleController extends BaseModuleController
         );
 
         return $table;
+    }
+
+    /**
+     * @return array
+     */
+    protected function getLocalizedPermalinkBase(): array
+    {
+        return [
+            'en' => 'articles',
+            'vi' => 'bai-viet',
+        ];
     }
 }
